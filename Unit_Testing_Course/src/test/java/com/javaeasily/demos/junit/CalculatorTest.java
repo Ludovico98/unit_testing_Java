@@ -1,6 +1,7 @@
 package com.javaeasily.demos.junit;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import  static  org.junit.Assert.*;
 
@@ -8,6 +9,13 @@ import javax.xml.bind.ValidationException;
 
 //example test
 public class CalculatorTest {
+
+    private Calculator calculator;
+
+    @Before
+    public void setUp(){
+        calculator = new Calculator();
+    }
 
     @Test
     public void testAddPositiveNumbers(){
