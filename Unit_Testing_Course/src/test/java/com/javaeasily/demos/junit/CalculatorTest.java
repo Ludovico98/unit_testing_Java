@@ -1,6 +1,8 @@
 package com.javaeasily.demos.junit;
+
 import org.junit.Assert;
 import org.junit.Test;
+import  static  org.junit.Assert.*;
 
 import javax.xml.bind.ValidationException;
 
@@ -8,13 +10,44 @@ import javax.xml.bind.ValidationException;
 public class CalculatorTest {
 
     @Test
-    public void testAdd(){
+    public void testAddPositiveNumbers(){
+        // Arrange
+        Calculator calculator = new Calculator();
+        int a = 10;
+        int b = 20;
+
+        // Act
+        int result = calculator.add(a,b);
+
+        //Assert
+        assertEquals(30, result);
+
+    }
+
+    @Test
+    public void testAddZeroToPositive(){
+        // Arrange
+        Calculator calculator = new Calculator();
+        int a = 10;
+        int b = 0;
+
+        // Act
+        int result = calculator.add(a,b);
+
+        //Assert
+        assertEquals(10, result);
+
+    }
+
+
+    /*
+    example code
 
         Assert.assertNotNull(new Object());
         Assert.assertTrue(10 == 10);
         Assert.assertNotEquals(1L,2L);
-    }
 
+     */
 
     /*
     a nut test should be divided into 3 sections
