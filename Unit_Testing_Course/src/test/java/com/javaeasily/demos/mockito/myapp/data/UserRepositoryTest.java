@@ -5,11 +5,12 @@ import com.javaeasily.demos.mockito.myapp.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserRepository {
+public class UserRepositoryTest {
 
     private Map<String, User> users = new HashMap<String, User>();
 
-    public UserRepository(){
+
+    public UserRepositoryTest(){
         users.put("ludo",new User("ludo","letmein"));
         users.put("matt",new User("matt","pass"));
     }
