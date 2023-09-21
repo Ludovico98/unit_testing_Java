@@ -1,8 +1,10 @@
 package com.javaeasily.demos.mockito.myapp;
 
-public class    User {
+public class User {
 
     public enum UserType {REGULAR_USER, ADMIN_USER}
+
+    public static String str = "Something";
     private String username;
     private String password;
     private boolean live = true;

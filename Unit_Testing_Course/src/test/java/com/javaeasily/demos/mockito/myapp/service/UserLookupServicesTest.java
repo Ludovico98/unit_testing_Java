@@ -24,6 +24,8 @@ public class UserLookupServicesTest {
     @Test
     public void getRegularUsers() {
 
+        System.out.println(User.str);
+
         //arrange
         List<User> userList = new LinkedList<>();
         System.out.println("I have added something!!!");
