@@ -1,8 +1,6 @@
 package com.javaeasily.demos.mockito.myapp;
 
-import java.util.Objects;
-
-public class User {
+public class    User {
 
     public enum UserType {REGULAR_USER, ADMIN_USER}
     private String username;
@@ -10,7 +8,7 @@ public class User {
     private boolean live = true;
     private final UserType userType;
 
-     User(String username, String password,UserType userType) {
+     User(String username, String password, UserType userType) {
         this.username = username;
         this.password = password;
         this.userType = userType;
@@ -23,7 +21,6 @@ public class User {
     public  static User createAdminUser(String username, String password){
         return new User(username, password, UserType.ADMIN_USER);
     }
-
     public String getUsername() {
         return username;
     }

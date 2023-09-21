@@ -17,6 +17,5 @@ public class UserRepositoryTest {
 
     public User findByUsername(String username) {
         return users.get(username);
-
     }
 }

@@ -15,8 +15,6 @@ public class UserRepository {
         users.put("frank", User.createAdminUser("frank","hello"));
         users.put("mark", User.createAdminUser("mark","1234"));
         users.put("pippo", User.createAdminUser("pippo","4321"));
-//        users.put("ludo",new User("ludo","letmein"));
-//        users.put("matt",new User("matt","pass"));
     }
     public User findByUsername(String username) {
         return users.get(username);

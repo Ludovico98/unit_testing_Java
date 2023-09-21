@@ -18,19 +18,17 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-
-<!--    <build>-->
-<!--        <plugins>-->
-<!--           <plugin>-->
-<!--               <groupId>org.apache.maven.plugins</groupId>-->
-<!--           </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
+    <build>
+        <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <version>3.11.0</version>
+           </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
-
-
 
 <!--        <dependency>-->
 <!--            <groupId>junit</groupId>-->
@@ -63,7 +61,6 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 </project>
