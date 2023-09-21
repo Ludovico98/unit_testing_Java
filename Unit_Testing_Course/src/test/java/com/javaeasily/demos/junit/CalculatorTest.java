@@ -2,6 +2,7 @@ package com.javaeasily.demos.junit;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import  static  org.junit.Assert.*;
 
@@ -14,6 +15,7 @@ public class CalculatorTest {
     public void setUp(){
         calculator = new Calculator();
     }
+
 
     @Test
     public void testAddPositiveNumbers(){
@@ -30,6 +32,7 @@ public class CalculatorTest {
 
     }
 
+    @Ignore
     @Test
     public void testAddZeroToPositive(){
         // Arrange

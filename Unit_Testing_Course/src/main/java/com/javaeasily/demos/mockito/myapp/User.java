@@ -3,12 +3,25 @@ package com.javaeasily.demos.mockito.myapp;
 import java.util.Objects;
 
 public class User {
+
+    public enum UserType {REGULAR_USER, ADMIN_USER}
     private String username;
     private String password;
+    private boolean live = true;
+    private final UserType userType;
 
-    public User (String username, String password){
+     User(String username, String password,UserType userType) {
         this.username = username;
         this.password = password;
+        this.userType = userType;
+    }
+
+    public  static User createRegularUser(String username, String password){
+         return new User(username, password, UserType.REGULAR_USER);
+    }
+
+    public  static User createAdminUser(String username, String password){
+        return new User(username, password, UserType.ADMIN_USER);
     }
 
     public String getUsername() {
@@ -19,17 +32,34 @@ public class User {
         return password;
     }
 
+    public boolean isLive() {
+        return live;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         User user = (User) o;
-        return username.equals(user.username) &&
-               password.equals(user.password);
+
+        if (live != user.live) return false;
+        if (username != null ? !username.equals(user.username) : user.username != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        return userType == user.userType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password);
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (live ? 1 : 0);
+        result = 31 * result + (userType != null ? userType.hashCode() : 0);
+        return result;
     }
+
 }
