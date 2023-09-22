@@ -15,7 +15,7 @@ public class TodoBusinessImpl {
         List<String> filteredTodos = new ArrayList<String>();
         List<String> todos = todoService.retriveTodos(user);
         for (String todo:todos){
-            if (todo.contains("Spring")){
+            if (todo.contains("spring")){
                 filteredTodos.add(todo);
             }
         }
