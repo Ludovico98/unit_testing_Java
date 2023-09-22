@@ -3,7 +3,7 @@ package com.javaeasily.demos.In28Minutes;
 public class StringHelper {
 
     public String truncateAInFirst2Positions(String str) {
-        System.out.println("hello there !!!!!!");
+        System.out.println("THIS IS INSIDE THE STRING HELPER !!!");
         if (str.length() <= 2)
             return str.replaceAll("A", "");
 
