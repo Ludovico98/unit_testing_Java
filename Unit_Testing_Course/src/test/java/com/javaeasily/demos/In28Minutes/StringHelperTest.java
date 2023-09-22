@@ -1,13 +1,17 @@
 package com.javaeasily.demos.In28Minutes;
 
 import org.junit.*;
+import org.junit.runners.Parameterized;
 
 import java.security.PublicKey;
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.*;
 
 public class StringHelperTest extends Object {
-    StringHelper helper = new StringHelper();
+    StringHelper helper;
+
 
     @Before
     public void before(){
@@ -38,12 +42,4 @@ public class StringHelperTest extends Object {
         assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
     }
 
-
-    @Test
-    public void truncateAInFirst2Positions() {
-    }
-
-    @Test
-    public void areFirstAndLastTwoCharactersTheSame() {
-    }
 }
