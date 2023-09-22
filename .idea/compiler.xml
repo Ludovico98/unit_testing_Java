@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/In28Minutes/src/main/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -9,5 +12,8 @@
         <module name="myapp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JunitCourse" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
