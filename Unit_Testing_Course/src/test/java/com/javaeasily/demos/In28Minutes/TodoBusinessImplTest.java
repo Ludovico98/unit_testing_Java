@@ -17,7 +17,7 @@ public class TodoBusinessImplTest {
 
         //Given
         TodoService todoServiceMock = mock(TodoService.class);
-        List<String> todos = Arrays.asList("kearn spring `MVC", "learning spring", "learn to dance");
+        List<String> todos = Arrays.asList("learn spring `MVC", "learning spring", "learn to dance");
 
         given(todoServiceMock.retriveTodos("Dummy")).willReturn(todos);
         TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
@@ -28,6 +28,26 @@ public class TodoBusinessImplTest {
         //Then
         assertThat(filteredTodos.size(), is(2) );
 
+    }
+
+    @Test
+    public void testDeleteTodosNotRelatedToSpring_usingBDD() {
+
+        //Given
+        TodoService todoServiceMock = mock(TodoService.class);
+        List<String> todos = Arrays.asList("learn spring MVC", "learning spring", "learn to dance");
+
+        given(todoServiceMock.retriveTodos("Dummy")).willReturn(todos);
+        TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+
+        //When
+        todoBusinessImpl.deleteTodosNotRelatedToSpring("Dummy");
+
+        //Then
+        verify(todoServiceMock, times(1)).deleteTodo("learn to dance");
+        verify(todoServiceMock, atLeast(1)).deleteTodo("learn to dance");
+        verify(todoServiceMock, never()).deleteTodo("learn spring MVC");
+        verify(todoServiceMock, never()).deleteTodo("learn spring");
     }
 
 }
